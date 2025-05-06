@@ -2,17 +2,33 @@ class Atendimento{
     #nome;
     #cpf;
     data;
-    hora;
+    horaChegada;
 
 constructor(nome,cpf){
     this.nome = nome;
     this.cpf = cpf;
     this.data = obterDataAtual();
-    this.hora = obterHoraAtual();
+    this.horaChegada = obterHoraAtual();
+}
+get nome() {
+    return this.#nome;
 }
 
+get cpf() {
+    return this.#cpf;
+}
+
+set nome(novoNome) {
+    this.#nome = novoNome;
+}
+
+set cpf(novoCpf) {
+    this.#cpf = novoCpf;
+}
+
+
     toString(){
-        return this.nome + " | " + this.cpf + " | " + this.data + " | " + this.hora;
+        return this.nome + "  Cpf: " + this.cpf + "  " + this.data + " Hora de chegada: " + this.horaChegada;
     }
 
 }
