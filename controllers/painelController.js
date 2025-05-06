@@ -1,6 +1,7 @@
  //painelController.js
 
 function atualizarUltimoAtendimento() {
+
     // Recupera o último atendido do localStorage
     const ultimo = localStorage.getItem('ultimoAtendido') || 'Aguardando...';
   
