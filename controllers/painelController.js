@@ -1,6 +1,6 @@
  //painelController.js
 
-function atualizarUltimoAtendimento() {
+/*function atualizarUltimoAtendimento() {
 
     // Recupera o último atendido do localStorage
     const ultimo = localStorage.getItem('ultimoAtendido') || 'Aguardando...';
@@ -13,9 +13,32 @@ function atualizarUltimoAtendimento() {
   atualizarUltimoAtendimento();
   
   // Atualiza a cada segundo
+  setInterval(atualizarUltimoAtendimento, 1000);*/
+  
+  function atualizarUltimoAtendimento() {
+    // Recupera o último atendido do localStorage
+    const ultimo = localStorage.getItem('ultimoAtendido');
+  
+    // Verifica se o elemento existe na página
+    const divUltimo = document.getElementById('ultimoAtendimento');
+    if (!divUltimo) return; // Evita erro se a div não existir
+  
+    // Atualiza o conteúdo
+    if (!ultimo) {
+      divUltimo.textContent = 'Aguardando...';
+    } else {
+      divUltimo.textContent = `Último Atendimento: ${ultimo}`;
+    }
+  }
+  
+  // Chama a função assim que a página carregar
+  atualizarUltimoAtendimento();
+  
+  // Atualiza a cada segundo
   setInterval(atualizarUltimoAtendimento, 1000);
   
-  /*function atualizarUltimoAtendimento() {
+  
+ /* function atualizarUltimoAtendimento() {
   const ultimoJSON = localStorage.getItem('ultimoAtendido');
 
   if (!ultimoJSON) {
