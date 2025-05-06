@@ -42,9 +42,10 @@ function atenderFila(){
      mostraratendimento.textContent = "Pessoa atendida: " + atendido.nome + " | Espera: " + diferenca;
      
      mostrarFila();
-
-     //localStorage.setItem('ultimoAtendido', JSON.stringify(atendido));
      localStorage.setItem('ultimoAtendido', atendido.nome);
+     //localStorage.setItem('ultimoAtendido', JSON.stringify(atendido));
+     //atualizarUltimoAtendimento();
+     //localStorage.setItem('ultimoAtendido', atendido.nome);
    }
    else {
       alert("Fila vazia!");
